@@ -1,9 +1,9 @@
 /*
  * @Author: June
- * @Description: 
+ * @Description:
  * @Date: 2024-09-27 13:45:07
- * @LastEditors: June
- * @LastEditTime: 2024-09-28 11:55:46
+ * @LastEditors: June 1601745371@qq.com
+ * @LastEditTime: 2024-09-28 23:39:37
  */
 import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
@@ -11,13 +11,13 @@ import { resolve } from 'path'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { PluginOption, CSSOptions } from 'vite'
+import { PluginOption } from 'vite'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { isProd } from './getEnv'
-import { VantResolver } from '@vant/auto-import-resolver';
+import { VantResolver } from '@vant/auto-import-resolver'
 import autoprefixer from 'autoprefixer'
-import postcsspxtoviewport from 'postcss-px-to-viewport'
+import postcsspxtoviewport8plugin from 'postcss-px-to-viewport-8-plugin'
 
 /**
  * 创建 vite 插件
@@ -31,7 +31,11 @@ export const createVitePlugins = (
   const { APP_TITLE } = viteEnv
 
   return [
-    Vue(),
+    Vue({
+      template: {
+        compilerOptions: { isCustomElement: (tag) => tag.startsWith('wc-') }
+      }
+    }),
     UnoCSS(),
     // vue 可以使用 jsx/tsx 语法
     VueJsx(),
@@ -83,7 +87,7 @@ export const createPostcssPlugin = () => {
       ],
       grid: true
     }),
-    postcsspxtoviewport({
+    postcsspxtoviewport8plugin({
       // 要转化的单位
       unitToConvert: 'px',
       // UI设计稿的大小

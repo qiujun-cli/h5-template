@@ -2,8 +2,8 @@
  * @Author: June
  * @Description: 
  * @Date: 2024-09-28 10:12:24
- * @LastEditors: June
- * @LastEditTime: 2024-09-28 11:32:08
+ * @LastEditors: June 1601745371@qq.com
+ * @LastEditTime: 2024-09-28 13:53:03
 -->
 <template>
   <div class="w-full h-100vh relative">
@@ -29,6 +29,7 @@
 import { debounce } from 'lodash-es';
 import { isIOS, isAndroin, isWeixin } from '@/utils/downloadApp'
 import { android_apk_link, android_store_link, ios_store_link } from '@/constants/app'
+import { showDialog } from 'vant';
 
 const handleDownload = debounce(function() {
   const _isWeixin = isWeixin()

@@ -2,38 +2,42 @@
  * @Author: June
  * @Description: 
  * @Date: 2024-09-28 09:04:58
- * @LastEditors: June
- * @LastEditTime: 2024-09-28 10:10:47
+ * @LastEditors: June 1601745371@qq.com
+ * @LastEditTime: 2024-09-28 20:06:43
 -->
 <template>
-  <div class="w-750px h-full flex flex-col" @click="handleNavDownload">
+  <div class="w-750px h-100vh flex flex-col">
     <!-- 顶部 -->
-    <section class="w-full">
-      <div class="w-full h-96px flex justify-between items-center box-border px-24px py-16px">
-        <img class="w-316px h-50px" src="@/assets/logo.svg" />
-        <div class="flex justify-end items-center">
-          <SvgIcon class="mr-28px" icon="search" extClass="text-44px" />
-          <SvgIcon class="mr-28px" icon="comment" extClass="text-44px" />
-          <SvgIcon class="mr-28px" icon="notification" extClass="text-44px" />
-
-          <img class="w-64px h-64px rounded-50%" src="@/assets/images/avatar.jpg" />
-        </div>
-      </div>
-      <div class="h-80px box-border px-48px py-20px">2</div>
+    <section class="w-full overflow-hidden">
+      <CHeader :handleNavDownload="handleNavDownload" />
+      <Tab v-model:curCom="curCom" />
     </section>
+
     <!-- 内容 -->
-    <section class="flex-1 bg-red">
-      content
+    <section class="flex-1">
+      <template v-if="curCom">
+        <component :is="comMap[curCom]" />
+      </template>
     </section>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { Lottery, Goodies, Activity, Match, Tab, CHeader } from './components'
 import { debounce } from 'lodash-es'
-import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router'
+import { ComName } from '@/enums/home'
 
 const router = useRouter()
-const handleNavDownload = debounce(function() {
+const handleNavDownload = debounce(function () {
   router.push('/download')
 }, 250)
+
+const curCom = ref<ComName>(ComName.goodies)
+const comMap: Record<ComName, any> = {
+  [ComName.lottery]: Lottery,
+  [ComName.goodies]: Goodies,
+  [ComName.activity]: Activity,
+  [ComName.match]: Match
+}
 </script>

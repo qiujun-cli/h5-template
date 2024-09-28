@@ -1,13 +1,22 @@
 @import url(./reset.scss);
 :root {
-  --color-primary: #FDC342 
+  --color-primary: #fac230;
+  --text-primary: #f2f2f2;
 }
 
-html, body {
-  background-color: #1A1A1F;
+html,
+body {
+  background-color: #1a1a1f;
   font-size: 28px;
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei',
+    'WenQuanYi Micro Hei';
   @apply text-#fff;
 }
 #app {
   @apply min-h-100vh;
+}
+// ios安全区域问题
+.safeArea-bottom {
+  padding-bottom: constant(safe-area-inset-bottom); //兼容 IOS<11.2
+  padding-bottom: env(safe-area-inset-bottom); //兼容 IOS>11.2
 }

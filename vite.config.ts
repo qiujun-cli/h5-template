@@ -1,9 +1,9 @@
 /*
  * @Author: June
- * @Description: 
+ * @Description:
  * @Date: 2024-09-27 13:01:36
- * @LastEditors: June
- * @LastEditTime: 2024-09-28 12:01:17
+ * @LastEditors: June 1601745371@qq.com
+ * @LastEditTime: 2024-09-28 17:08:09
  */
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
@@ -12,7 +12,6 @@ import { loadEnv } from './build/getEnv'
 import { include } from './build/optimize'
 import { createVitePlugins, createPostcssPlugin } from './build/plugins'
 import type { ConfigEnv, UserConfig } from 'vite'
-
 
 export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   const root = process.cwd()
@@ -24,6 +23,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
     plugins: createVitePlugins(mode, env),
     optimizeDeps: { include },
     server: {
+      port: 3000,
       host: '0.0.0.0'
     },
     css: {
@@ -34,7 +34,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       },
       postcss: {
         plugins: createPostcssPlugin()
-      },
+      }
     },
     resolve: {
       alias: {
