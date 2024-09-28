@@ -1,4 +1,13 @@
 @import url(./reset.scss);
 :root {
-  --color-primary: #red
+  --color-primary: #FDC342 
+}
+
+html, body {
+  background-color: #1A1A1F;
+  font-size: 28px;
+  @apply text-#fff;
+}
+#app {
+  @apply min-h-100vh;
 }

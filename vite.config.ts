@@ -3,48 +3,37 @@
  * @Description: 
  * @Date: 2024-09-27 13:01:36
  * @LastEditors: June
- * @LastEditTime: 2024-09-27 14:56:58
+ * @LastEditTime: 2024-09-28 12:01:17
  */
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
-import autoprefixer from 'autoprefixer'
 import { resolve } from 'node:path'
-import {  loadEnv, wrapperEnv } from './build/getEnv'
-import {  include } from './build/optimize'
-import { createVitePlugins } from './build/plugins'
+import { loadEnv } from './build/getEnv'
+import { include } from './build/optimize'
+import { createVitePlugins, createPostcssPlugin } from './build/plugins'
 import type { ConfigEnv, UserConfig } from 'vite'
 
-// https://vitejs.dev/config/
+
 export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   const root = process.cwd()
   const env = loadEnv(mode, `${root}/env`)!
-  const viteEnv = wrapperEnv(env)
   const envPrefix = 'APP_'
-
   return {
     envPrefix,
     publicDir: 'public',
-    plugins: createVitePlugins(mode, viteEnv),
+    plugins: createVitePlugins(mode, env),
     optimizeDeps: { include },
+    server: {
+      host: '0.0.0.0'
+    },
     css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern'
+        }
+      },
       postcss: {
-        plugins: [
-          autoprefixer({
-            overrideBrowserslist: [
-              'Android 4.1',
-              'iOS 7.1',
-              'Chrome > 31',
-              'ff > 31',
-              'ie >= 8',
-              '> 1%',
-              'last 2 versions',
-              'not dead',
-              'not ie 11'
-              //'last 2 versions', // 所有主流浏览器最近2个版本
-            ],
-            grid: true
-          })
-        ]
+        plugins: createPostcssPlugin()
       },
     },
     resolve: {

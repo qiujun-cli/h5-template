@@ -6,7 +6,8 @@
     "cypress.config.*",
     "nightwatch.conf.*",
     "playwright.config.*",
-    "./build/*"
+    "./build/*",
+    "./typings/modules-node.d.ts"
   ],
   "compilerOptions": {
     "composite": true,
