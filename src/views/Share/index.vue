@@ -3,7 +3,7 @@
  * @Description: 
  * @Date: 2024-09-28 12:07:47
  * @LastEditors: June 1601745371@qq.com
- * @LastEditTime: 2024-09-29 10:07:18
+ * @LastEditTime: 2024-09-29 12:03:19
 -->
 <template>
   <div class="relative w-full h-100vh overflow-hidden">
@@ -137,7 +137,7 @@
 
     <!-- app打开按钮 -->
     <img
-      class="w-344px h-88px absolute left-50% -translate-x-50% bottom-158px z-10"
+      class="w-344px h-88px absolute left-50% -translate-x-50% bottom-178px z-10"
       src="@/assets/images/share/openInApp-btn.png"
     />
   </div>
