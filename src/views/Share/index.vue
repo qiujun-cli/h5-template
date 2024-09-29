@@ -3,7 +3,7 @@
  * @Description: 
  * @Date: 2024-09-28 12:07:47
  * @LastEditors: June 1601745371@qq.com
- * @LastEditTime: 2024-09-28 19:03:14
+ * @LastEditTime: 2024-09-29 10:07:18
 -->
 <template>
   <div class="relative w-full h-100vh overflow-hidden">
@@ -38,7 +38,7 @@
         @change="onSwiperChange"
       >
         <van-swipe-item v-for="image in images" :key="image">
-          <img class="wh-full object-contain" :src="image" />
+          <img class="wh-full object-cover" :src="image" />
         </van-swipe-item>
       </van-swipe>
       <ul class="flex justify-center items-end h-26px">

@@ -3,10 +3,10 @@
  * @Description: 
  * @Date: 2024-09-28 09:04:58
  * @LastEditors: June 1601745371@qq.com
- * @LastEditTime: 2024-09-28 20:06:43
+ * @LastEditTime: 2024-09-29 09:30:50
 -->
 <template>
-  <div class="w-750px h-100vh flex flex-col">
+  <div class="w-750px h-100vh flex flex-col overflow-hidden">
     <!-- 顶部 -->
     <section class="w-full overflow-hidden">
       <CHeader :handleNavDownload="handleNavDownload" />
@@ -14,7 +14,7 @@
     </section>
 
     <!-- 内容 -->
-    <section class="flex-1">
+    <section class="content-wrap">
       <template v-if="curCom">
         <component :is="comMap[curCom]" />
       </template>
@@ -41,3 +41,9 @@ const comMap: Record<ComName, any> = {
   [ComName.match]: Match
 }
 </script>
+
+<style lang="scss" scoped>
+.content-wrap {
+  height: calc(100vh - 176px);
+}
+</style>

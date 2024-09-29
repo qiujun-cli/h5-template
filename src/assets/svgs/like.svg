@@ -1,10 +1,10 @@
-<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="26" height="26" viewBox="0 0 26 26"  xmlns="http://www.w3.org/2000/svg">
 <g id="icon/&#233;&#166;&#150;&#233;&#161;&#181;/&#229;&#150;&#156;&#230;&#172;&#162;/off" clip-path="url(#clip0_415_80431)">
 <path id="Vector" d="M8.1252 4.33374C4.83451 4.33374 2.16687 7.00139 2.16687 10.2921C2.16687 16.2504 9.20854 21.6671 13.0002 22.9271C16.7919 21.6671 23.8335 16.2504 23.8335 10.2921C23.8335 7.00139 21.1659 4.33374 17.8752 4.33374C15.86 4.33374 14.0785 5.33414 13.0002 6.86538C11.9219 5.33414 10.1404 4.33374 8.1252 4.33374Z" stroke="#BCBFC9" stroke-width="2.16667" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <defs>
 <clipPath id="clip0_415_80431">
-<rect width="26" height="26" fill="white"/>
+<rect width="26" height="26" />
 </clipPath>
 </defs>
 </svg>
