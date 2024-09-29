@@ -1,14 +1,14 @@
 <!--
  * @Author: June 1601745371@qq.com
  * @Date: 2024-09-28 19:30:06
- * @LastEditors: June 1601745371@qq.com
- * @LastEditTime: 2024-09-29 10:11:57
+ * @LastEditors: June
+ * @LastEditTime: 2024-09-29 22:34:21
  * @FilePath: \vue3-h5\src\views\Home\components\Goodies.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-  <div class="wh-full overflow-y-scroll box-border p-28px">
-    <wc-waterfall :gap="14" :cols="2">
+  <div class="wh-full overflow-y-scroll box-border p-20px" @click="props.handleNavDownload">
+    <wc-waterfall :gap="10" :cols="2">
       <div
         v-for="item in list"
         :key="item.id"
@@ -44,49 +44,12 @@
 
 <script lang="ts" setup>
 import SvgIcon from '@/components/SvgIcon/SvgIcon.vue'
-import 'wc-waterfall'
+import { list } from '@/mock'
 
-const list = [
-  {
-    id: 1,
-    url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
-    name: '溪北',
-    title: '繁而有序的现代风电脑桌面，舒适的书房环境',
-    isLike: false,
-    foceser: 130
-  },
-
-  {
-    id: 3,
-    url: 'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg',
-    name: '溪北',
-    title: '繁而有序的现代风电脑桌面，舒适的书房环境',
-    isLike: true,
-    foceser: 130
-  },
-  {
-    id: 4,
-    url: 'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
-    name: '溪北',
-    title: '繁而有序的现代风电脑桌面，舒适的书房环境',
-    isLike: false,
-    foceser: 130
-  },
-  {
-    id: 31,
-    url: 'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg',
-    name: '溪北',
-    title: '繁而有序的现代风电脑桌面，舒适的书房环境',
-    isLike: true,
-    foceser: 130
-  },
-  {
-    id: 41,
-    url: 'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
-    name: '溪北',
-    title: '繁而有序的现代风电脑桌面，舒适的书房环境',
-    isLike: true,
-    foceser: 130
+const props = defineProps({
+  handleNavDownload: {
+    type: Function as PropType<any>,
   }
-]
+})
+
 </script>

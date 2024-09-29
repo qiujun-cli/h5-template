@@ -2,8 +2,8 @@
  * @Author: June
  * @Description: 
  * @Date: 2024-09-28 09:04:58
- * @LastEditors: June 1601745371@qq.com
- * @LastEditTime: 2024-09-29 09:30:50
+ * @LastEditors: June
+ * @LastEditTime: 2024-09-29 22:28:50
 -->
 <template>
   <div class="w-750px h-100vh flex flex-col overflow-hidden">
@@ -16,7 +16,7 @@
     <!-- 内容 -->
     <section class="content-wrap">
       <template v-if="curCom">
-        <component :is="comMap[curCom]" />
+        <component :is="comMap[curCom]" :handleNavDownload="handleNavDownload" />
       </template>
     </section>
   </div>

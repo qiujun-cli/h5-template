@@ -1,14 +1,14 @@
 <!--
  * @Author: June 1601745371@qq.com
  * @Date: 2024-09-28 19:56:26
- * @LastEditors: June 1601745371@qq.com
- * @LastEditTime: 2024-09-29 10:28:42
+ * @LastEditors: June
+ * @LastEditTime: 2024-09-29 22:07:01
  * @FilePath: \vue3-h5\src\views\Home\components\Tab.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
   <ul
-    class="relative z-1 h-80px box-border px-48px py-20px flex text-center justify-between items-center text-#6C6C6F text-32px rounded-[0px_0px_20px_20px]"
+    class="relative bg-#1a1a1f z-2 h-80px box-border px-48px py-20px flex text-center justify-between items-center text-#6C6C6F text-32px rounded-[0px_0px_20px_20px]"
     @click="handleTab"
   >
     <li class="h-full w-80px"></li>

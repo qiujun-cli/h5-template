@@ -1,13 +1,13 @@
 <!--
  * @Author: June 1601745371@qq.com
  * @Date: 2024-09-28 19:31:36
- * @LastEditors: June 1601745371@qq.com
- * @LastEditTime: 2024-09-29 11:44:46
+ * @LastEditors: June
+ * @LastEditTime: 2024-09-29 22:59:24
  * @FilePath: \vue3-h5\src\views\Home\components\Lottery.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
-  <div class="wh-full overflow-y-scroll">
+  <div class="wh-full overflow-y-scroll relative z-1 -mt-10px">
     <!-- swiper -->
     <section class="w-full relative">
       <van-swipe
@@ -88,7 +88,7 @@
                     <p class="text-26px">抽中0元领</p>
                     <p class="text-20px line-through">￥4299</p>
                   </div>
-                  <div class="h-full f-center box-border p-10px">
+                  <div class="h-full f-center box-border p-10px" @click="props.handleNavDownload">
                     <span class="text-30px font-600">去抽奖</span>
                     <SvgIcon icon="arrow-right" extClass="text-28px" />
                   </div>
@@ -221,6 +221,11 @@
 </template>
 
 <script lang="ts" setup>
+const props = defineProps({
+  handleNavDownload: {
+    type: Function as PropType<any>,
+  }
+})
 // swiper
 const images = [
   'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
@@ -242,7 +247,7 @@ const onSwiperChange = (index: number) => {
 .activity-item {
   width: 694px;
   height: 360px;
-  background: url('@/assets/images/common/goods-bg.png') 0 0 no-repeat;
+  background: url('@/assets/images/lottery/goods-bg.png') 0 0 no-repeat;
   background-size: 100% 100%;
   .btn-no-join {
     width: 362px;

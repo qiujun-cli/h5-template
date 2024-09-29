@@ -2,8 +2,8 @@
  * @Author: June
  * @Description: 
  * @Date: 2024-09-27 13:01:36
- * @LastEditors: June 1601745371@qq.com
- * @LastEditTime: 2024-09-28 13:54:34
+ * @LastEditors: June
+ * @LastEditTime: 2024-09-29 22:33:34
  */
 
 import { createApp } from 'vue'
@@ -18,6 +18,9 @@ import 'vant/es/dialog/style/index'
 import { setupSvgIcon } from '@/components/SvgIcon'
 import 'virtual:svg-icons-register'
 import './lib/vconsole'
+import 'wc-waterfall'
+
+
 async function bootstrap() {
   const app = createApp(App)
   await setupRouter(app)
