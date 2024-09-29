@@ -108,9 +108,11 @@
     </ul>
 
     <!-- bottom bar -->
-    <section class="fixed left-0 right-0 bottom-0 safeArea-bottom z-99">
+    <section
+      class="fixed left-0 right-0 bottom-0 safeArea-bottom z-99 bg-#1D1D24"
+    >
       <div
-        class="h-96px bg-#1D1D24 flex justify-between items-center w-full box-border p-[16px_28px]"
+        class="h-96px flex justify-between items-center w-full box-border p-[16px_28px]"
       >
         <div
           class="w-340px bg-#303038 text-26px h-64px flex justify-start items-center box-border p-[12px_20px] rounded-142px"
