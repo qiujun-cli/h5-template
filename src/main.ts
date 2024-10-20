@@ -1,9 +1,9 @@
 /*
  * @Author: June
- * @Description: 
+ * @Description:
  * @Date: 2024-09-27 13:01:36
  * @LastEditors: June
- * @LastEditTime: 2024-09-29 22:33:34
+ * @LastEditTime: 2024-10-20 10:38:52
  */
 
 import { createApp } from 'vue'
@@ -19,7 +19,6 @@ import { setupSvgIcon } from '@/components/SvgIcon'
 import 'virtual:svg-icons-register'
 import './lib/vconsole'
 import 'wc-waterfall'
-
 
 async function bootstrap() {
   const app = createApp(App)
